@@ -59,6 +59,13 @@
                 BackgroundColor="#3498db"
                 TextColor="White"
                AutomationId="StartGameButton"/>
+        <Button Grid.Row="5"
+                Grid.Column="1"
+                Text="Crash The Application"
+                Command="{Binding CrashCommand}"
+                BackgroundColor="#3498db"
+                TextColor="White"
+               AutomationId="CrashCrash"/>
 
     </Grid>
     

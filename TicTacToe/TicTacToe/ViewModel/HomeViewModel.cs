@@ -5,6 +5,10 @@ using Xamarin.Forms;
 using System.Threading.Tasks;
 using Acr.UserDialogs;
 using TicTacToe.View;
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
+
 
 namespace TicTacToe
 {
@@ -49,6 +53,19 @@ namespace TicTacToe
                             return false;
 
                         return true;
+                    }));
+            }
+        }
+
+        Command crashCommand;
+        public Command CrashCommand
+        {
+            get
+            {
+                return crashCommand ??
+                    (crashCommand = new Command(() =>
+                    {
+                        Crashes.GenerateTestCrash();
                     }));
             }
         }
